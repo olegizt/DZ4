@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo lsblk
+sleep 10
+
 #Удаление LVM лог.раздела/группы/физ.раздела
 sudo lvremove -y /dev/vg_root/lv_root
 sudo vgremove -y /dev/vg_root
@@ -28,4 +31,7 @@ sudo lvconvert --merge /dev/VolGroup00/home_snap #восстанавливаем
 sudo mount /dev/VolGroup00/LogVol_Home /home #монтируем каталог home
 sudo ls /home #проверяем что ранее удалённые файлы восстановились из снэпшота
 
-echo -e "\nЗадание закончено. Для выключения виртуальной машины используйте команду - shutdown now/n"
+sudo lsblk
+sleep 10
+
+echo -e "\nЗадание закончено. Для выключения виртуальной машины используйте команду - shutdown now\n"

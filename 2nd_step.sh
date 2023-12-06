@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo lsblk
+sleep 10
+
 sudo lvremove -y /dev/VolGroup00/LogVol00 #удаление большого логического раздела LogVol00 используемого ранее для монтирования корня
 sudo lvcreate -y -n VolGroup00/LogVol00 -L 8G /dev/VolGroup00 #создание логического раздела LogVol00 размером 8ГБ, который будет использован далее для размещения корневого раздела
 sudo mkfs.xfs /dev/VolGroup00/LogVol00 #создаём на вновь созданном разделе файловую систему
