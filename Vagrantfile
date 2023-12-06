@@ -72,7 +72,8 @@ Vagrant.configure("2") do |config|
             wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/1st_step.sh
             wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/2nd_step.sh
             wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/3rd_step.sh
-            chmod +x /home/vagrant/*.sh
+            wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/chroot.sh
+                        chmod +x /home/vagrant/*.sh
           SHELL
   
         end
