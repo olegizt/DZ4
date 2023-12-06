@@ -69,10 +69,10 @@ Vagrant.configure("2") do |config|
             mkdir -p ~root/.ssh
             cp ~vagrant/.ssh/auth* ~root/.ssh
             yum install -y mdadm smartmontools hdparm gdisk xfsdump wget
-            wget -P /root/ https://github.com/olegizt/DZ4/blob/main/1st_step.sh
-            wget -P /root/ https://github.com/olegizt/DZ4/blob/main/2nd_step.sh
-            wget -P /root/ https://github.com/olegizt/DZ4/blob/main/3rd_step.sh
-            chmod +x /root/*.sh
+            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/1st_step.sh
+            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/2nd_step.sh
+            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/3rd_step.sh
+            chmod +x /home/*.sh
           SHELL
   
         end
