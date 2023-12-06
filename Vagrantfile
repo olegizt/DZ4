@@ -10,22 +10,22 @@ MACHINES = {
         :ip_addr => '192.168.56.101',
     :disks => {
         :sata1 => {
-            :dfile => home + '/VirtualBox VMs/sata1.vdi',
+            :dfile => home + '/VirtualBox VMs/lvm_sata1.vdi',
             :size => 10240,
             :port => 1
         },
         :sata2 => {
-            :dfile => home + '/VirtualBox VMs/sata2.vdi',
+            :dfile => home + '/VirtualBox VMs/lvm_sata2.vdi',
             :size => 2048, # Megabytes
             :port => 2
         },
         :sata3 => {
-            :dfile => home + '/VirtualBox VMs/sata3.vdi',
+            :dfile => home + '/VirtualBox VMs/lvm_sata3.vdi',
             :size => 2048, # Megabytes
             :port => 3
         },
         :sata4 => {
-            :dfile => home + '/VirtualBox VMs/sata4.vdi',
+            :dfile => home + '/VirtualBox VMs/lvm_sata4.vdi',
             :size => 1024,
             :port => 4
         }
@@ -69,10 +69,10 @@ Vagrant.configure("2") do |config|
             mkdir -p ~root/.ssh
             cp ~vagrant/.ssh/auth* ~root/.ssh
             yum install -y mdadm smartmontools hdparm gdisk xfsdump wget
-            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/1st_step.sh
-            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/2nd_step.sh
-            wget -P /home/ https://raw.githubusercontent.com/olegizt/DZ4/main/3rd_step.sh
-            chmod +x /home/*.sh
+            wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/1st_step.sh
+            wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/2nd_step.sh
+            wget -P /home/vagrant/ https://raw.githubusercontent.com/olegizt/DZ4/main/3rd_step.sh
+            chmod +x /home/vagrant/*.sh
           SHELL
   
         end
